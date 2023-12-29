@@ -1,0 +1,126 @@
+/* Layout */
+html {
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+div#wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#controls {
+  text-align: right;
+  position: absolute;
+  bottom: 12em;
+  right: 0px;
+  padding-right: 2em;
+}
+
+#footer {
+  text-align: left;
+  position: absolute;
+  bottom: 30px;
+  left: 1em;
+  margin: 0 auto;
+  font-size: 1.3em;
+  z-index: 1000;
+}
+
+#content {
+  position: absolute;
+  text-align: right;
+  bottom: 0px;
+  right: 0px;
+  padding-right: 2em;
+}
+
+#help_page {
+  position: absolute;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  width: 60%;
+  top: 15%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 2em;
+  display: none;
+  line-height: 1.3em;
+  z-index: 2000;
+}
+
+#help_page ul {
+  list-style-type: square;
+  list-style-position: outside;
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+#help_page h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+#help_page p {
+  margin-bottom: 0.5em;
+}
+
+#control_panel {
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.5);
+  color: white;
+  width: 30%;
+  max-width: 420px;
+  top: 0;
+  bottom: 0; /* 5em; */
+  left: 0;
+  margin: 0 auto;
+  padding: 2em;
+  line-height: 2em;
+}
+
+#control_panel .slider {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+/* Styles */
+
+#controls p {
+  margin-bottom: 1em;
+}
+
+.interval-list div {
+  display: inline-block;
+  position: relative;
+}
+
+.green {
+  color: green;
+}
+
+.yellow {
+  color: green;
+}
+
+.red {
+  color: green;
+}
+
+.black {
+  color: black;
+}
+
+.big {
+  font-size: 10em;
+}
+
+strong {
+  font-weight: bold;
+}

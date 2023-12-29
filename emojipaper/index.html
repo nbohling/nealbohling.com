@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emoji Wallpaper</title>
+  <link rel="stylesheet" href="./style.css">
+  <meta property="og:title" content="An Emoji Wallpaper" />
+  <meta property="og:description" content="Generate wallpaper for your device with colorful emoji" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Emoji&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">
+</head>
+
+<body class="loading">
+  <canvas id="canvas"></canvas>
+
+  <form id="form">
+    <div class="hidden">
+      <label for="t"></label>
+      <input id="title" name="t" type="text" size=25 placeholder="untitled wallpaper" value="">
+
+      <select id="patternPicker" name="pattern">
+        <option value="grid">A grid</option>
+        <option value="diamond">Diamonds</option>
+        <option value="hex">Hexes</option>
+        <option value="spiral">Spirals</option>
+        <option value="scalespiral">A swirl</option>
+        <option value="random">A sprinkle</option>
+        <option value="many">Multitudes</option>
+        <option value="foam" selected>Bubbles</option>
+        <option value="stacks">Stacks</option>
+      </select>
+      <label for="patternPicker"> of </label>
+
+      <label for="orderPicker"></label>
+
+      <select id="orderPicker" name="order">
+        <option value="ordered">ordered</option>
+        <option value="alternating">alternating</option>
+        <option value="random" selected>random</option>
+      </select>
+    </div>
+
+    <label for="emojiPicker"></label>
+    <input id="emojiPicker" name="emoji" type="text" size=10 placeholder="emoji" value="🍌🍓🍊🍇">
+
+    <div class="hidden">
+      <label for="texture"></label><select id="texture" name="texture">
+        <option value="flat">on a solid field of</option>
+        <option value="gradient" selected>on a gradient of </option>
+        <option value="monochrome">in monochrome</option>
+      </select>
+
+      <label for="colorPicker">&nbsp;</label>
+      <input id="colorPicker" name="color" type="color" onInput="setColor(this);" value="#ffe7bd">
+    </div>
+    <!-- <div style="display:inline-block;">
+<span class="swatch" value="#1e1e1e" style="background-color:#1e1e1e;"></span>
+<span class="swatch" value="#eeeeee" style="background-color:#eeeeee;"></span>
+<span class="swatch" value="#928a82" style="background-color:#928a82;"></span>
+<span class="swatch" value="#005493" style="background-color:#005493;"></span>
+<span class="swatch" value="#33815c" style="background-color:#33815c;"></span>
+<span class="swatch" value="#941751" style="background-color:#941751;"></span>
+</div> -->
+
+    <div class="ignore hidden">
+      <label for="scalePicker">A </label>
+
+      <select id="scalePicker" name="scale">
+        <option value="0.85">compact</option>
+        <option value="1.0" selected>cozy</option>
+        <option value="1.25">comfortable</option>
+      </select>
+
+      <label for="sizePicker">fit for </label>
+
+      <select id="sizePicker">
+        <option value="*" selected>this screen</option>
+        <option value="page">this page</option>
+        <option value="1500x500">a cover image</option>
+        <option value="1920x1080">a virtual background</option>
+        <option value="1600x1600">a square</option>
+      </select>
+    </div>
+
+    <div class="ignore hidden" id="advanced">
+      <!-- hidden URL param: fontSize=50 -->
+      font size: <input id="fontSize" name="fontSize" type="text" size=1 value="" /> <label for="fontSize">px</label>
+      <label for="family">in </label>
+      <select id="family" name="family">
+        <option value="" selected>system font</option>
+        <option value="Noto Emoji">noto b&w emoji</option>
+        <option value="Noto Color Emoji">noto color emoji</option>
+      </select>
+      <br>
+      spacing: <input id="spacing" name="spacing" type="text" size=1 value="" /> <label for="spacing">%</label>,
+      margin: <input id="margin" name="margin" type="text" size=1 value="" /> <label for="margin">%</label>
+      <br> <span class="button" onclick="startAnimation()">Animate</span><span class="button"
+        onclick="setFullbleed(); render();">Fullbleed</span>
+    </div>
+    <p>
+  </form>
+
+  <div class="hidden">
+    <span class="button" id="copy" onclick="copy(this); ">COPY LINK</span>
+    <a id="download-link">
+      <span class="button" id="download-name">Download</span>
+      <br>
+    </a>
+    <div id="advanced-toggle" onclick="toggleAdvanced()" title="advanced"></div>
+  </div>
+
+  <script src="./runes.js"></script>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
